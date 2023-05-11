@@ -1,19 +1,16 @@
 import { NavLink } from "react-router-dom"
-
+import navBarStyles from "../Navbar/Navbar.module.scss"
 const Navbar = () => {
   return (
     <>
-      <nav>
-        <div>
-          <ul>
-            <MenuLink to="/">Главная</MenuLink>
-
+      <nav className={navBarStyles.NavBar}>
+        <div className={navBarStyles.leftSide}>
+          <ul className={navBarStyles.links}>
             <MenuLink to="/roster">Ростер</MenuLink>
-
             <MenuLink to="/tournaments">Турниры</MenuLink>
           </ul>
         </div>
-        <div>
+        <div className={navBarStyles.rightSide}>
           <h2>TennisTour</h2>
         </div>
       </nav>
@@ -22,7 +19,7 @@ const Navbar = () => {
 }
 
 const MenuLink = ({ ...props }) => (
-  <li>
+  <li className={navBarStyles.menuLink}>
     <NavLink {...props} />
   </li>
 )

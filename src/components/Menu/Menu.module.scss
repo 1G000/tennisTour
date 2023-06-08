@@ -1,0 +1,72 @@
+.NavBar {
+  margin: 0 auto;
+  background-color: #021e39;
+  height: 80px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+
+.links {
+  display: block;
+  padding-left: 4px;
+  li {
+    margin: 0;
+    padding-bottom: 0px;
+    padding-left: 32px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 700px;
+  padding: 22px 0px;
+  font-family: Roboto-Bold;
+  line-height: 28px;
+  border-bottom: 4px solid transparent;
+  &:hover {
+    border-bottom: 4px solid #ffffff;
+  }
+}
+
+.leftSide {
+  flex: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  #hidden {
+    display: flex;
+  }
+
+  button {
+    display: none;
+    margin-left: 20px;
+  }
+}
+
+.rightSide {
+  flex: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  h2 {
+    color: white;
+    padding-right: 36px;
+    font-family: Roboto-Bold;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+  }
+}
+
+.menuLink {
+  display: inline-flex;
+  align-items: center;
+}

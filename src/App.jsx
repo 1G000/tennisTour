@@ -1,10 +1,10 @@
-import MainLayout from "./pages/MainLayout"
-import Home from "./pages/Home"
-import Roster from "./pages/Roster"
-import Tournaments from "./pages/Tournaments"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Footer from "./components/Footer"
-import "./App.css"
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Roster from "./pages/Roster";
+import MainLayout from "./pages/MainLayout";
+import Tournaments from "./pages/Tournaments";
+import "./App.scss";
 
 function App() {
   return (
@@ -14,17 +14,14 @@ function App() {
           <Routes>
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Home />} />
-              <Route path="tournaments" element={<Tournaments />} />
               <Route path="roster" element={<Roster />} />
+              <Route path="tournaments" element={<Tournaments />} />
             </Route>
           </Routes>
         </main>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,9 +1,11 @@
+import React from "react";
+import tournamentStyles from "../components/Tournaments/Tournaments.module.scss";
 const Tournaments = () => {
   return (
-    <>
-      <h1>Tournaments</h1>
-    </>
-  )
-}
+    <div>
+      <h3>Welcome Cup</h3>
+    </div>
+  );
+};
 
-export default Tournaments
+export default Tournaments;

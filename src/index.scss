@@ -7,8 +7,13 @@
   color: rgba(255, 255, 255, 0.87);
 
   @font-face {
-    font-family: Roboto;
+    font-family: Roboto-Bold;
     src: url(../fonts/Roboto-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
   }
   font-synthesis: none;
   text-rendering: optimizeLegibility;

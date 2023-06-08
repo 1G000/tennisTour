@@ -5,7 +5,9 @@ import Menu from "../components/Menu/Menu";
 const MainLayout = () => {
   return (
     <>
-      <Menu />
+      <header>
+        <Menu />
+      </header>
       <Outlet />
     </>
   );

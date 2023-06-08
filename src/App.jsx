@@ -10,15 +10,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className="wrapper">
-        <main>
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route index element={<Home />} />
-              <Route path="roster" element={<Roster />} />
-              <Route path="tournaments" element={<Tournaments />} />
-            </Route>
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="roster" element={<Roster />} />
+            <Route path="tournaments" element={<Tournaments />} />
+          </Route>
+        </Routes>
       </div>
     </BrowserRouter>
   );

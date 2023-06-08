@@ -1,4 +1,4 @@
-const players = [
+export const players = [
   {
     id: 0,
     imageUrl: "./img/playersPhoto/igorgorbatovskiy.jpg",
@@ -43,5 +43,50 @@ const players = [
     backhandStyle: "Двуручный",
     rankingPosition: "-",
   },
+  {
+    id: 4,
+    imageUrl: "./img/playersPhoto/igorgorbatovskiy.jpg",
+    genre: "male",
+    name: "Игорь Горбатовский",
+    birthDate: "19.02.1990",
+    turnToProDate: "2021",
+    powerHand: "Правша",
+    backhandStyle: "Двуручный",
+    rankingPosition: "-",
+  },
+  {
+    id: 5,
+    imageUrl: "./img/playersPhoto/victorrazmashkin.jpg",
+    genre: "male",
+    name: "Виктор Размашкин",
+    birthDate: "01.12.2022",
+    turnToProDate: "2022",
+    powerHand: "Правша",
+    backhandStyle: "Двуручный",
+    rankingPosition: "-",
+  },
+  {
+    id: 6,
+    imageUrl: "./img/playersPhoto/victorrazmashkin.jpg",
+    name: "Наталья Горбатовская",
+    genre: "female",
+    birthDate: "18.02.1991",
+    turnToProDate: "2022",
+    powerHand: "Правша",
+    backhandStyle: "Двуручный",
+    rankingPosition: "-",
+  },
+  {
+    id: 7,
+    imageUrl: "./img/playersPhoto/victorrazmashkin.jpg",
+    name: "Арина Соболенко",
+    genre: "female",
+    birthDate: "01.12.2022",
+    turnToProDate: "2022",
+    powerHand: "Правша",
+    backhandStyle: "Двуручный",
+    rankingPosition: "-",
+  },
 ];
-export default players;
+export const men = players.filter((player) => player.genre === "male");
+export const women = players.filter((player) => player.genre === "female");

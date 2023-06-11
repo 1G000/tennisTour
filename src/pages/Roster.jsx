@@ -9,25 +9,25 @@ const Roster = () => {
   const [womenRoster, setWomenRoster] = useState(false);
 
   const showMenRoster = () => {
-    setMenRoster(true);
+    setMenRoster((current) => !current);
   };
   const showWomenRoster = () => {
-    setWomenRoster(true);
+    setWomenRoster((current) => !current);
   };
 
   return (
     <main>
-      <div className={rosterStyles.imgArea}>
-        <div className={rosterStyles.imgAreaLeft} onClick={showMenRoster}>
+      <div className={rosterStyles.btnArea}>
+        <button className={rosterStyles.btnMen} onClick={showMenRoster}>
           <h4>Мужчины</h4>
-        </div>
-        <div className={rosterStyles.imgAreaRight} onClick={showWomenRoster}>
+        </button>
+        <button className={rosterStyles.btnWomen} onClick={showWomenRoster}>
           <h4>Женщины</h4>
-        </div>
+        </button>
       </div>
       <div
         className={rosterStyles.cardsArea}
-        id={womenRoster ? rosterStyles.hidden : ""}
+        id={womenRoster || menRoster ? rosterStyles.hidden : ""}
       >
         {players.map((player) => (
           <Card

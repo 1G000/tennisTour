@@ -1,11 +1,11 @@
-.imgArea {
+.btnArea {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 32px;
 }
 
-.imgAreaLeft {
+.btnMen {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,7 @@
   width: 180px;
   height: 40px;
   position: relative;
+  border: none;
 
   &:after {
     content: "";
@@ -38,7 +39,7 @@
   }
 }
 
-.imgAreaRight {
+.btnWomen {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +47,7 @@
   width: 180px;
   height: 40px;
   position: relative;
+  border: none;
 
   &:before {
     content: "";

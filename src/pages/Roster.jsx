@@ -2,45 +2,44 @@ import React from "react";
 import { useState } from "react";
 import rosterStyles from "../components/Roster/Roster.module.scss";
 import Card from "../components/Card";
-import { players, men, women } from "../components/Data/Players";
+import { men, women } from "../components/Data/Players";
 
 const Roster = () => {
-  const [type, setType] = useState("men");
+  const [menRoster, setMenRoster] = useState(false);
+  const [womenRoster, setWomenRoster] = useState(false);
 
   const showMenRoster = () => {
-    setType("men");
+    if (!menRoster) {
+      setMenRoster(true);
+      setWomenRoster(false);
+    } else setMenRoster(false);
   };
   const showWomenRoster = () => {
-    setType("women");
+    if (!womenRoster) {
+      setWomenRoster(true);
+      setMenRoster(false);
+    } else setWomenRoster(false);
   };
 
   return (
     <main>
       <div className={rosterStyles.btnArea}>
-        <button className={rosterStyles.btnMen} onClick={showMenRoster}>
+        <button
+          className={rosterStyles.btnMen}
+          id={menRoster ? rosterStyles.checkedMen : ""}
+          onClick={showMenRoster}
+        >
           <h4>Мужчины</h4>
         </button>
-        <button className={rosterStyles.btnWomen} onClick={showWomenRoster}>
+        <button
+          className={rosterStyles.btnWomen}
+          id={womenRoster ? rosterStyles.checkedWomen : ""}
+          onClick={showWomenRoster}
+        >
           <h4>Женщины</h4>
         </button>
       </div>
-
-      {/* <div className={rosterStyles.cardsArea}>
-        {players.map((player) => (
-          <Card
-            key={player.id}
-            name={player.name}
-            imageUrl={player.imageUrl}
-            birthDate={player.birthDate}
-            turnToProDate={player.turnToProDate}
-            powerHand={player.powerHand}
-            backhandStyle={player.backhandStyle}
-            rankingPosition={player.rankingPosition}
-          />
-        ))}
-      </div> */}
-
-      {type === "men" && (
+      {(menRoster || (!menRoster && !womenRoster)) && (
         <div className={rosterStyles.cardsArea}>
           {men.map((player) => (
             <Card
@@ -56,7 +55,7 @@ const Roster = () => {
           ))}
         </div>
       )}
-      {type === "women" && (
+      {(womenRoster || (!womenRoster && !menRoster)) && (
         <div className={rosterStyles.cardsArea}>
           {women.map((player) => (
             <Card
@@ -75,5 +74,4 @@ const Roster = () => {
     </main>
   );
 };
-
 export default Roster;

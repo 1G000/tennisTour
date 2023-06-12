@@ -73,6 +73,32 @@
   }
 }
 
+#checkedWomen {
+  background-color: #ffa2a2;
+  &:before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    bottom: 0px;
+    border: 20px solid transparent;
+    border-right: 20px solid #ffa2a2;
+    border-bottom: 20px solid #ffa2a2;
+  }
+}
+
+#checkedMen {
+  background-color: #7ea9fd;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 180px;
+    bottom: 0px;
+    border: 20px solid transparent;
+    border-bottom: 20px solid #7ea9fd;
+    border-left: 20px solid #7ea9fd;
+  }
+}
+
 .cardsArea {
   display: flex;
   flex-direction: row;

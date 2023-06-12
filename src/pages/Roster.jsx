@@ -5,14 +5,13 @@ import Card from "../components/Card";
 import { players, men, women } from "../components/Data/Players";
 
 const Roster = () => {
-  const [menRoster, setMenRoster] = useState(false);
-  const [womenRoster, setWomenRoster] = useState(false);
+  const [type, setType] = useState("men");
 
   const showMenRoster = () => {
-    setMenRoster((current) => !current);
+    setType("men");
   };
   const showWomenRoster = () => {
-    setWomenRoster((current) => !current);
+    setType("women");
   };
 
   return (
@@ -25,10 +24,8 @@ const Roster = () => {
           <h4>Женщины</h4>
         </button>
       </div>
-      <div
-        className={rosterStyles.cardsArea}
-        id={womenRoster || menRoster ? rosterStyles.hidden : ""}
-      >
+
+      {/* <div className={rosterStyles.cardsArea}>
         {players.map((player) => (
           <Card
             key={player.id}
@@ -41,43 +38,40 @@ const Roster = () => {
             rankingPosition={player.rankingPosition}
           />
         ))}
-      </div>
+      </div> */}
 
-      <div
-        className={rosterStyles.cardsArea}
-        id={menRoster ? "" : rosterStyles.hidden}
-      >
-        {men.map((player) => (
-          <Card
-            key={player.id}
-            name={player.name}
-            imageUrl={player.imageUrl}
-            birthDate={player.birthDate}
-            turnToProDate={player.turnToProDate}
-            powerHand={player.powerHand}
-            backhandStyle={player.backhandStyle}
-            rankingPosition={player.rankingPosition}
-          />
-        ))}
-      </div>
-
-      <div
-        className={rosterStyles.cardsArea}
-        id={womenRoster ? "" : rosterStyles.hidden}
-      >
-        {women.map((player) => (
-          <Card
-            key={player.id}
-            name={player.name}
-            imageUrl={player.imageUrl}
-            birthDate={player.birthDate}
-            turnToProDate={player.turnToProDate}
-            powerHand={player.powerHand}
-            backhandStyle={player.backhandStyle}
-            rankingPosition={player.rankingPosition}
-          />
-        ))}
-      </div>
+      {type === "men" && (
+        <div className={rosterStyles.cardsArea}>
+          {men.map((player) => (
+            <Card
+              key={player.id}
+              name={player.name}
+              imageUrl={player.imageUrl}
+              birthDate={player.birthDate}
+              turnToProDate={player.turnToProDate}
+              powerHand={player.powerHand}
+              backhandStyle={player.backhandStyle}
+              rankingPosition={player.rankingPosition}
+            />
+          ))}
+        </div>
+      )}
+      {type === "women" && (
+        <div className={rosterStyles.cardsArea}>
+          {women.map((player) => (
+            <Card
+              key={player.id}
+              name={player.name}
+              imageUrl={player.imageUrl}
+              birthDate={player.birthDate}
+              turnToProDate={player.turnToProDate}
+              powerHand={player.powerHand}
+              backhandStyle={player.backhandStyle}
+              rankingPosition={player.rankingPosition}
+            />
+          ))}
+        </div>
+      )}
     </main>
   );
 };
